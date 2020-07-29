@@ -1,4 +1,4 @@
-package com.marelv.mail;
+package com.marlev.mail;
 
 import org.springframework.web.bind.annotation.*;
 

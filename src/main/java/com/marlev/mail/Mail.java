@@ -1,4 +1,4 @@
-package com.marelv.mail;
+package com.marlev.mail;
 
 public class Mail {
     private String name;
