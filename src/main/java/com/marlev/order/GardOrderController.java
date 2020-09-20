@@ -1,6 +1,8 @@
 package com.marlev.order;
 
+import com.marlev.mail.EmailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,15 +10,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Controller
 public class GardOrderController {
 
+
     @Autowired
-    GardOrderRepository repository;
+    EmailServiceImpl emailService;
 
 
-    @PostMapping("/comanda")
-    public String addOrder(@RequestBody GardOrder order) {
-
-        repository.save(order);
-
-        return "alalalla";
+    @PostMapping("/oferta")
+    public ResponseEntity<Object> addOrder(@RequestBody GardOrder order) {
+        emailService.sendOrder(order);
+        return ResponseEntity.ok().build();
     }
 }

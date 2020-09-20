@@ -1,48 +1,30 @@
 package com.marlev.order;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.Size;
+import java.util.List;
 
-@Entity
 public class GardOrder {
 
-    @Id
-    @GeneratedValue
-    private int id;
-
+    private String name;
     private String email;
-
-    private Integer phone;
-
-    private String comanda;
-
-    @Size(min = 5, message = "Enter at least 10 Characters...")
-    @Column(name = "details")
-    private String details;
+    private String phone;
+    private List<Offer> oferta;
 
     public GardOrder() {
-        super();
     }
 
-    public GardOrder(int id, String email, Integer phone, String comanda,
-        String details) {
-        super();
-        this.id = id;
+    public GardOrder(String name, String email, String phone, List<Offer> oferta) {
+        this.name = name;
         this.email = email;
         this.phone = phone;
-        this.comanda = comanda;
-        this.details = details;
+        this.oferta = oferta;
     }
 
-    public int getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -53,27 +35,19 @@ public class GardOrder {
         this.email = email;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public String getComanda() {
-        return comanda;
+    public List<Offer> getOferta() {
+        return oferta;
     }
 
-    public void setComanda(String order) {
-        this.comanda = order;
-    }
-
-    public String getDetails() {
-        return details;
-    }
-
-    public void setDetails(String details) {
-        this.details = details;
+    public void setOferta(List<Offer> oferta) {
+        this.oferta = oferta;
     }
 }
