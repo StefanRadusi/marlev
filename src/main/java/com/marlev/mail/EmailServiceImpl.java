@@ -40,10 +40,10 @@ public class EmailServiceImpl {
         if (gard.getOferta() != null) {
 
             gard.getOferta().forEach(offer -> order.append("Nume gard: ").append(offer.getTitle()).append(" latime: ")
-                .append(offer.getWidth()).append(" inaltime: ").append(offer.getTitle()).append(offer.getWidth())
-                .append(" numar lamele: ").append(offer.getNoOfLamella()).append(offer.getWidth())
-                .append(" inaltime lamele: ").append(offer.getHeightOfLamella()).append(offer.getWidth())
-                .append(" pret: ").append(offer.getPrice()).append(" lei \n"));
+                .append(offer.getWidth()).append("\n\tinaltime: ").append(offer.getHeight())
+                .append("\n\tnumar lamele: ").append(offer.getNoOfLamella())
+                .append("\n\tinaltime lamele: ").append(offer.getHeightOfLamella())
+                .append("\n\tpret: ").append(offer.getPrice()).append(" lei \n"));
         }
         return order.toString();
     }
