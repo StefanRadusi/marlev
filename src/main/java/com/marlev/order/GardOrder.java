@@ -7,15 +7,17 @@ public class GardOrder {
     private String name;
     private String email;
     private String phone;
+    private String city;
     private List<Offer> oferta;
 
     public GardOrder() {
     }
 
-    public GardOrder(String name, String email, String phone, List<Offer> oferta) {
+    public GardOrder(String name, String email, String phone, String city, List<Offer> oferta) {
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.city = city;
         this.oferta = oferta;
     }
 
@@ -41,6 +43,14 @@ public class GardOrder {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public List<Offer> getOferta() {

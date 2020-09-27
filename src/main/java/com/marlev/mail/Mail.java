@@ -4,15 +4,17 @@ public class Mail {
     private String name;
     private String email;
     private String phone;
+    private String city;
     private String message;
 
     public Mail() {
     }
 
-    public Mail(String name, String email, String phone, String message) {
+    public Mail(String name, String email, String phone, String city, String message) {
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.city = city;
         this.message = message;
     }
 
@@ -38,6 +40,14 @@ public class Mail {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getMessage() {
