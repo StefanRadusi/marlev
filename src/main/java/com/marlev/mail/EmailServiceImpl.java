@@ -39,11 +39,13 @@ public class EmailServiceImpl {
         StringBuilder order = new StringBuilder();
         if (gard.getOferta() != null) {
 
-            gard.getOferta().forEach(offer -> order.append("Nume gard: ").append(offer.getTitle()).append(" latime: ")
-                .append(offer.getWidth()).append("\n\tinaltime: ").append(offer.getHeight())
+            gard.getOferta().forEach(offer -> order.append("Comanda: ")
+                .append("\n\tNume gard: ").append(offer.getTitle())
+                .append("\n\tlatime: ").append(offer.getWidth())
+                .append("\n\tinaltime: ").append(offer.getHeight())
                 .append("\n\tnumar lamele: ").append(offer.getNoOfLamella())
                 .append("\n\tinaltime lamele: ").append(offer.getHeightOfLamella())
-                .append("\n\tpret: ").append(offer.getPrice()).append(" lei \n"));
+                .append("\n\tpret: ").append(offer.getPrice()).append(" lei \n\n"));
         }
         return order.toString();
     }
